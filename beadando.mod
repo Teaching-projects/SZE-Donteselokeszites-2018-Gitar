@@ -11,23 +11,23 @@ var money >= 0;
 var guitarbuy{g in guitars} binary;
 var whichconcerts{c in concerts, j in genre} binary;
 
-#legalább egy gitárt vennünk kell
+#legalÃ¡bb egy gitÃ¡rt vennÃ¼nk kell
 s.t. AtLeastOneGuitar:
 	sum{g in guitars} guitarbuy[g] >= 1;
 
-#a pénzünk nem lehet több, mint a gitár ára
+#a pÃ©nzÃ¼nk nem lehet tÃ¶bb, mint a gitÃ¡r Ã¡ra
 s.t. MoneyIsAlwaysPositive{g in guitars}:
 	money >= guitarbuy[g]*price[g];
 
-#Egy koncertre csak egyszer mehetünk el
+#Egy koncertre csak egyszer mehetÃ¼nk el
 s.t. OneConcertMaxOnce{c in concerts}:
 	sum{j in genre} whichconcerts[c,j] <= 1;
 
-#Ha adott gitárt vettem meg és az adott stílusra való, akkor az adott stílusban lesz értelme szerepelnünk a koncerteken
+#Ha adott gitÃ¡rt vettem meg Ã©s az adott stÃ­lusra valÃ³, akkor az adott stÃ­lusban lesz Ã©rtelme szerepelnÃ¼nk a koncerteken
 s.t. ChosenConcerts{c in concerts, j in genre, g in guitars:genreguitars[j,g] == 1}:
 	whichconcerts[c,j] = guitarbuy[g];
 
-#Aktuális pénz = gitárunkal aktuális stílus * koncertárak stílus szerint + indulótõke - gitár ára
+#AktuÃ¡lis pÃ©nz = gitÃ¡runkal aktuÃ¡lis stÃ­lus * koncertÃ¡rak stÃ­lus szerint + indulÃ³tÃµke - gitÃ¡r Ã¡ra
 s.t. MoneyInitialize:
 	money = sum{c in concerts, j in genre} whichconcerts[c,j]*concertprice[c,j] + startmoney - sum{g in guitars}guitarbuy[g]*price[g];
 
@@ -66,7 +66,7 @@ G5	82
 ;
 
 param genreguitars:
-		G1	G2	G3	G4	G5 :=
+	G1	G2	G3	G4	G5 :=
 GEN1	1	.	.	.	.
 GEN2	.	1	1	.	.
 GEN3	.	.	.	1	1
@@ -74,12 +74,12 @@ GEN3	.	.	.	1	1
 
 param concertprice:
 	GEN1	GEN2	GEN3 :=
-C1	40		60		32
-C2	24		30		16
-C3	33		43		22
-C4	40		53		41
-C5	27		80		47
-C6	40		50		47
+C1	40	60	32
+C2	24	30	16
+C3	33	43	22
+C4	40	53	41
+C5	27	80	47
+C6	40	50	47
 ;
 
 end;
