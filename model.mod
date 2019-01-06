@@ -29,8 +29,8 @@ s.t. AtLeastOneGuitar:
 s.t. OneConcertMaxOnce{c in concerts}:
 	sum{j in genre} whichconcerts[c,j] = 1;
 
-s.t. ChosenConcerts{(c,d) in concertdates, (g,j) in optimalguitargenres}:
-	whichconcerts[c,j] <= sum{d2 in 1..d}guitarbuy[g,d2];
+s.t. ChosenConcerts{(c,d) in concertdates, j in genre}:
+	whichconcerts[c,j] <= sum{d2 in 1..d, g in guitars:genreguitars[g] == j}guitarbuy[g,d2];
 
 s.t. DontBuyTooExpensiveGuitar{d in 1..nDay}:
 	dailybudget[d-1] >= sum{g in guitars}price[g]*guitarbuy[g,d];
