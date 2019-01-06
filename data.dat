@@ -4,7 +4,7 @@ param startmoney := 130;
 
 set guitars := Cort_X6_VPR Invasion_LPX720 Epiphone_Dot_Studio Sterling_Music_Man_SUB_SILO3 Ibanez_RC220;
 
-set genre := GEN1 GEN2 GEN3;
+set genre := Ska Jazz Metalcore;
 
 set concerts := C1 C2 C3 C4 C5 C6 C7 C8 C9 C10 C11 C12;
 
@@ -17,15 +17,15 @@ Ibanez_RC220	82
 ;
 
 param genreguitars:=
-Cort_X6_VPR	GEN1
-Invasion_LPX720	GEN1
-Epiphone_Dot_Studio	GEN3
-Sterling_Music_Man_SUB_SILO3	GEN2
-Ibanez_RC220	GEN2
+Cort_X6_VPR	Metalcore
+Invasion_LPX720	Metalcore
+Epiphone_Dot_Studio	Jazz
+Sterling_Music_Man_SUB_SILO3	Ska
+Ibanez_RC220	Ska
 ;
 
 param concertprice:
-	GEN1	GEN2	GEN3 :=
+	Metalcore	Ska	Jazz :=
 C1	40	60	80
 C2	40	60	80
 C3	40	60	80
