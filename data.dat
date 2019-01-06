@@ -1,0 +1,59 @@
+data;
+
+param startmoney := 130;
+
+set guitars := Cort_X6_VPR Invasion_LPX720 Epiphone_Dot_Studio Sterling_Music_Man_SUB_SILO3 Ibanez_RC220;
+
+set genre := GEN1 GEN2 GEN3;
+
+set concerts := C1 C2 C3 C4 C5 C6 C7 C8 C9 C10 C11 C12;
+
+param price:=
+Cort_X6_VPR	75
+Invasion_LPX720	90
+Epiphone_Dot_Studio	120
+Sterling_Music_Man_SUB_SILO3	85
+Ibanez_RC220	82
+;
+
+param genreguitars:=
+Cort_X6_VPR	GEN1
+Invasion_LPX720	GEN1
+Epiphone_Dot_Studio	GEN3
+Sterling_Music_Man_SUB_SILO3	GEN2
+Ibanez_RC220	GEN2
+;
+
+param concertprice:
+	GEN1	GEN2	GEN3 :=
+C1	40	60	80
+C2	40	60	80
+C3	40	60	80
+C4	40	60	80
+C5	60	80	40
+C6	60	80	40
+C7	60	80	40
+C8	60	80	40
+C9	80	40	60
+C10	80	40	60
+C11	80	40	60
+C12	80	40	60
+;
+
+param concertdays:=
+C1	4
+C2	5
+C3	6
+C4	9
+C5	12
+C6	14
+C7	15
+C8	18
+C9	21
+C10	25
+C11	26
+C12	29
+;
+
+
+end;
